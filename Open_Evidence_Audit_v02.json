@@ -1,0 +1,47 @@
+{
+  "project": "Open Evidence",
+  "version": "0.2-prototype",
+  "data_type": "synthetic",
+  "policy": {
+    "agent_alpha": {
+      "public_report": [
+        "read",
+        "summarize"
+      ],
+      "internal_summary": [
+        "read"
+      ]
+    }
+  },
+  "evidence_authenticity_verified": false,
+  "permissions_enforced": false,
+  "results": [
+    {
+      "record": {
+        "agent": "agent_alpha",
+        "resource": "public_report",
+        "action": "read"
+      },
+      "status": "AUTHORIZED",
+      "reason": "The validated policy explicitly permits this action on this resource."
+    },
+    {
+      "record": {
+        "agent": "agent_alpha",
+        "resource": "public_report",
+        "action": "delete"
+      },
+      "status": "UNAUTHORIZED",
+      "reason": "The validated policy does not permit this action on this resource."
+    },
+    {
+      "record": {
+        "agent": "agent_alpha",
+        "resource": null,
+        "action": "read"
+      },
+      "status": "INDETERMINATE",
+      "reason": "Authorization cannot be established from the supplied record and policy."
+    }
+  ]
+}
